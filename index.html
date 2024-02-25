@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main-div {
+        display: flex;
+      }
+      body {
+        padding: 0;
+        background-color: black;
+        color: #fefbf6;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+      .Spotify {
+        margin: 0;
+        padding: 0;
+      }
+      /*HOVER _EFFECT*/
+      .left-div-each-item:hover {
+        background-color: white;
+        color: black;
+      }
+
+      .song-image-div {
+        height: 17rem;
+        position: relative;
+
+        /* margin: 1rem; */
+      }
+      .song-image-div > img {
+        border-radius: 10px;
+      }
+      .song-card:hover {
+        .song-image-div > a {
+          display: block;
+        }
+        background-color: rgb(104, 226, 123);
+      }
+      .song-image-div > a {
+        display: none;
+        position: absolute;
+        top: 13rem;
+        right: 1rem;
+        font-size: 2rem;
+        /* margin: 1rem; */
+      }
+
+      .left-div-items {
+        /* background-color: #1ed760; */
+        width: 100%;
+        border-radius: 5px;
+        /* border: white 2px solid; */
+      }
+      .left-div-each-item {
+        display: flex;
+        /* justify-content: center; */
+        /* align-items: center; */
+        border-radius: 15px;
+        margin-left: 0.5rem;
+        /* margin-bottom: 0.5rem; */
+        /* background-color: yellow; */
+      }
+      .menu-first {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 1rem;
+        /* background-color: violet; */
+        width: 3rem;
+      }
+      .menu-infoo {
+        width: 100%;
+        margin-left: 1rem;
+        /* background-color: black; */
+      }
+
+      .left-div {
+        position: sticky;
+        /* margin: 1rem;
+        bottom: 10px; */
+
+        /* background-color: blue; */
+        /* position: -webkit-sticky;
+        position: sticky;
+        left: 10;
+        top: 10; */
+        width: 15%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      .left-div-playlist {
+        margin-left: 1rem;
+        /* background-color: rgb(195, 187, 174); */
+        width: 100%;
+      }
+      .playlist-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem;
+      }
+      .playlist-items {
+        margin: 1rem;
+        /* background-color: teal; */
+      }
+      .playlist-items > p {
+        font-size: 1rem;
+        margin: 1rem 1rem 0rem 0rem;
+      }
+      .right-div {
+        /* background-color: white; */
+        margin: 1rem;
+        width: 100%;
+      }
+      .logo-div {
+        height: 8rem;
+      }
+      .img-div {
+        /* background-color: yellow; */
+        margin-left: 1rem;
+        height: 32rem;
+        width: 60rem;
+      }
+      .img-div > img {
+        border-radius: 25px;
+      }
+      .songs-div > h3 {
+        margin-left: 1rem;
+        /* background-color: blue; */
+      }
+      .song-card {
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
+        justify-content: center;
+        background-color: #1ed760;
+        height: 25rem;
+        width: 16.98rem;
+        border-radius: 15px;
+        padding: 1rem;
+        margin: 1rem 1rem 1rem 0rem;
+      }
+      .allsongs {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .side {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .side > h3 {
+        margin-right: 1rem;
+      }
+
+      .right-div-after-image {
+        margin-left: 1rem;
+        /* background-color: yellow; */
+        display: flex;
+        justify-content: space-between;
+      }
+      footer {
+        background-color: rgb(69, 69, 69);
+        height: 10rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .footer-logo > i {
+        margin: 1rem;
+      }
+      @media only screen and (max-width: 950px) {
+        .main-div {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .logo-div {
+          /* background-color: violet; */
+          height: 5rem;
+          width: 10rem;
+        }
+        .menu-infoo > h3 {
+          font-size: 1rem;
+        }
+        .img-div {
+          margin: 0;
+          width: 100%;
+        }
+        .left-div-items {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          /* background-color: yellow; */
+          flex-direction: row;
+          align-items: center;
+          justify-content: end;
+        }
+        .left-div-each-item {
+          /* margin: 1rem; */
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .left-div-each-item > .menu-first > i {
+          display: none;
+        }
+
+        .left-div {
+          margin: 0;
+          height: auto;
+          width: 100%;
+          position: sticky;
+          top: 0px;
+          background-color: #090a09;
+          z-index: 2;
+          /* background-color: blue; */
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .left-div-playlist {
+          display: none;
+        }
+        .side {
+          margin-right: 3rem;
+        }
+
+        .songs-div > h3 {
+          padding-top: 1rem;
+          margin-left: 2rem;
+        }
+        .right-div {
+          margin-top: 0;
+          height: auto;
+          width: 100%;
+          /* background-color: red; */
+        }
+        .songs-div {
+        }
+        .song-card {
+          margin-right: 0.45rem;
+          margin-bottom: 3rem;
+          width: 20rem;
+          height: auto;
+        }
+        .allsongs {
+          margin-left: 1rem;
+          /* background-color: aqua; */
+        }
+        @media only screen and (max-width: 650px) {
+          .left-div {
+            /* margin: ; */
+            background-color: white;
+            /* position: sticky;
+            top: 5px; */
+            color: #090a09;
+            width: 100%;
+            border-radius: 15px;
+            margin-top: 1rem;
+          }
+          .left-div-each-item:hover {
+            background-color: black;
+            color: white;
+          }
+          .logo-div {
+            display: none;
+          }
+          .left-div-items {
+            /* border-radius: 15px; */
+            /* background-color: yellow; */
+            justify-content: space-between;
+            align-items: center;
+          }
+          .right-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+          }
+          .song-card {
+            font-size: small;
+            height: auto;
+            /* padding: 0; */
+
+            width: 9rem;
+          }
+          .song-name > h3 {
+            font-size: 0.8rem;
+            /* font-style: italic; */
+          }
+          .song-image-div {
+            width: 9.5rem;
+            height: 9rem;
+          }
+          .song-image-div > a {
+            display: block;
+            position: absolute;
+            top: 7.3rem;
+            right: 0.5rem;
+            font-size: 1rem;
+            /* margin: 1rem; */
+          }
+          .img-div {
+            margin-top: 2rem;
+            /* background-color: #1ed760;
+            border-radius: 15px; */
+            height: 20rem;
+            width: auto;
+          }
+          footer {
+            margin: 0;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-div">
+      <div class="left-div">
+        <div class="logo-div">
+          <a href="#"
+            ><img
+              src="https://www.pngall.com/wp-content/uploads/13/Spotify-Logo-PNG-HD-Image.png"
+              alt=""
+              height="100%"
+              width="100%"
+          /></a>
+        </div>
+        <div class="left-div-items">
+          <div class="left-div-each-item">
+            <div class="menu-first">
+              <i class="fa-solid fa-house fa-2xl" style="color: #1ed760"></i>
+            </div>
+            <div class="menu-infoo">
+              <h3 class="menu-info">Home</h3>
+            </div>
+          </div>
+
+          <div class="left-div-each-item">
+            <div class="menu-first">
+              <i
+                class="fa-solid fa-magnifying-glass fa-2xl"
+                style="color: #1ed760"
+              ></i>
+            </div>
+            <div class="menu-infoo">
+              <h3>Search</h3>
+            </div>
+          </div>
+
+          <div class="left-div-each-item">
+            <div class="menu-first">
+              <i
+                class="fa-solid fa-lines-leaning fa-2xl"
+                style="color: #1ed760"
+              ></i>
+            </div>
+            <div class="menu-infoo">
+              <h3>Library</h3>
+            </div>
+          </div>
+
+          <div class="left-div-each-item">
+            <div class="menu-first">
+              <i class="fa-regular fa-heart fa-2xl" style="color: #1ed760"></i>
+            </div>
+            <div class="menu-infoo">
+              <h3>Liked</h3>
+            </div>
+          </div>
+        </div>
+        <div class="left-div-playlist">
+          <div class="playlist-head">
+            <h3>Your Playlist</h3>
+            <i class="fa-solid fa-play fa-2xl" style="color: #1ed760"></i>
+          </div>
+          <div class="playlist-items">
+            <p>Playlist 1</p>
+            <p>Playlist 2</p>
+            <p>Playlist 3</p>
+          </div>
+        </div>
+      </div>
+      <div class="right-div">
+        <div class="img-div">
+          <img
+            src="spotify-play-image.jpeg"
+            alt=""
+            height="100%"
+            width="100%"
+          />
+        </div>
+        <div class="songs-div">
+          <div class="right-div-after-image">
+            <div>
+              <h3>Recently Played</h3>
+            </div>
+            <div class="side">
+              <h3>Filter</h3>
+              <i class="fa-solid fa-filter fa-2xl" style="color: #1ed760"></i>
+            </div>
+          </div>
+
+          <div class="allsongs">
+            <div class="song-card">
+              <div class="song-image-div">
+                <img
+                  src="song-image.jpeg"
+                  alt="nopic"
+                  height="100%"
+                  width="100%"
+                />
+                <a href="#">
+                  <i
+                    class="fa-solid fa-circle-play fa-2xl"
+                    style="color: #090a09"
+                  ></i>
+                </a>
+              </div>
+              <div class="song-name">
+                <h3 style="color: black">Aathi ( From "Kaththi" )</h3>
+              </div>
+              <div class="song-info">
+                <h4 style="color: black">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. A
+                  officiis repellat.
+                </h4>
+              </div>
+            </div>
+            <div class="song-card">
+              <div class="song-image-div">
+                <img
+                  src="song-image.jpeg"
+                  alt="nopic"
+                  height="100%"
+                  width="100%"
+                />
+                <a href="#">
+                  <i
+                    class="fa-solid fa-circle-play fa-2xl"
+                    style="color: #090a09"
+                  ></i>
+                </a>
+              </div>
+              <div class="song-name">
+                <h3 style="color: black">Aathi ( From "Kaththi" )</h3>
+              </div>
+              <div class="song-info">
+                <h4 style="color: black">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. A
+                  officiis repellat.
+                </h4>
+              </div>
+            </div>
+            <div class="song-card">
+              <div class="song-image-div">
+                <img
+                  src="song-image.jpeg"
+                  alt="nopic"
+                  height="100%"
+                  width="100%"
+                />
+                <a href="#">
+                  <i
+                    class="fa-solid fa-circle-play fa-2xl"
+                    style="color: #090a09"
+                  ></i>
+                </a>
+              </div>
+              <div class="song-name">
+                <h3 style="color: black">Aathi ( From "Kaththi" )</h3>
+              </div>
+              <div class="song-info">
+                <h4 style="color: black">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. A
+                  officiis repellat.
+                </h4>
+              </div>
+            </div>
+            <div class="song-card">
+              <div class="song-image-div">
+                <img
+                  src="song-image.jpeg"
+                  alt="nopic"
+                  height="100%"
+                  width="100%"
+                />
+                <a href="#">
+                  <i
+                    class="fa-solid fa-circle-play fa-2xl"
+                    style="color: #090a09"
+                  ></i>
+                </a>
+              </div>
+              <div class="song-name">
+                <h3 style="color: black">Aathi ( From "Kaththi" )</h3>
+              </div>
+              <div class="song-info">
+                <h4 style="color: black">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. A
+                  officiis repellat.
+                </h4>
+              </div>
+            </div>
+            <div class="song-card">
+              <div class="song-image-div">
+                <img
+                  src="song-image.jpeg"
+                  alt="nopic"
+                  height="100%"
+                  width="100%"
+                />
+                <a href="#">
+                  <i
+                    class="fa-solid fa-circle-play fa-2xl"
+                    style="color: #090a09"
+                  ></i>
+                </a>
+              </div>
+              <div class="song-name">
+                <h3 style="color: black">Aathi ( From "Kaththi" )</h3>
+              </div>
+              <div class="song-info">
+                <h4 style="color: black">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. A
+                  officiis repellat.
+                </h4>
+              </div>
+            </div>
+            <div class="song-card">
+              <div class="song-image-div">
+                <img
+                  src="song-image.jpeg"
+                  alt="nopic"
+                  height="100%"
+                  width="100%"
+                />
+                <a href="#">
+                  <i
+                    class="fa-solid fa-circle-play fa-2xl"
+                    style="color: #090a09"
+                  ></i>
+                </a>
+              </div>
+              <div class="song-name">
+                <h3 style="color: black">Aathi ( From "Kaththi" )</h3>
+              </div>
+              <div class="song-info">
+                <h4 style="color: black">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. A
+                  officiis repellat.
+                </h4>
+              </div>
+            </div>
+            <div class="song-card">
+              <div class="song-image-div">
+                <img
+                  src="song-image.jpeg"
+                  alt="nopic"
+                  height="100%"
+                  width="100%"
+                />
+                <a href="#">
+                  <i
+                    class="fa-solid fa-circle-play fa-2xl"
+                    style="color: #090a09"
+                  ></i>
+                </a>
+              </div>
+              <div class="song-name">
+                <h3 style="color: black">Aathi ( From "Kaththi" )</h3>
+              </div>
+              <div class="song-info">
+                <h4 style="color: black">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. A
+                  officiis repellat.
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div>
+        <h3>Connect With Us</h3>
+      </div>
+      <div class="footer-logo">
+        <i class="fa-brands fa-facebook fa-2xl" style="color: #1ed760"></i>
+        <i class="fa-brands fa-facebook fa-2xl" style="color: #1ed760"></i>
+        <i class="fa-brands fa-facebook fa-2xl" style="color: #1ed760"></i>
+      </div>
+      <div>
+        <h4>Copyright@Spotify@India</h4>
+      </div>
+    </footer>
+
+    <!-- <i class="fa-solid fa-house fa-2xl" style="color: #1ed760"></i>
+    <i class="fa-solid fa-house-chimney fa-2xl" style="color: #1ed760"></i>
+    <i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #1ed760"></i>
+    <i class="fa-solid fa-heart fa-2xl" style="color: #1ed760"></i>
+    <i
+      class="fa-solid fa-lines-leaning fa-flip-horizontal fa-2xl"
+      style="color: #1ed760"
+    ></i>
+    <i class="fa-solid fa-lines-leaning fa-2xl" style="color: #1ed760"></i>
+    <i class="fa-solid fa-play fa-2xl" style="color: #1ed760"></i> -->
+  </body>
+</html>
